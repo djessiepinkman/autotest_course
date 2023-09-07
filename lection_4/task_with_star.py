@@ -12,7 +12,19 @@
 # 4974 --> 7974
 
 def max_division_by_3(num):
-    # Здесь нужно написать код
+    # Это наброски. Работает только для первой цифры
+    num = 981
+    f_n = num // (10 ** (len(str(num)) - 1))  # Находим первую цифру
+    l_n = num % (10 ** (len(str(num)) - 1))  # Находим последнюю цифру
+    max_num = 0
+
+    for i in range(f_n, 10):
+        num = (i * (10 ** (len(str(num)) - 1))) + l_n
+        if num % 3 == 0:
+            if num > max_num:
+                max_num = num
+    print(max_num)
+
     return new_num
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

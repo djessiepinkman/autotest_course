@@ -8,8 +8,18 @@
 # 4 --> 0 (4 уже одна цифра, а значит мы проделали 0 итераций)
 
 def multiplication_chain(num):
-    # Здесь нужно написать код
+    count_multy = 0
+    new_num = 1
+    while len(str(num)) > 1:
+        for i in range(len(str(num))):
+            new_num = new_num * int(str(num)[i])
+        num = new_num
+        new_num = 1
+
+        count_multy += 1
+
     return count_multy
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
@@ -21,7 +31,6 @@ data = [
 test_data = [
     3, 0, 2, 4, 1, 4
 ]
-
 
 for i, d in enumerate(data):
     assert multiplication_chain(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
