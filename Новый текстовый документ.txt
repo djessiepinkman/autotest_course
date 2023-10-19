@@ -1,0 +1,4 @@
+git switch -c test_branch (Можно своё название)
+git add .
+git commit -m 'новые изменения'
+git push origin test_branch
